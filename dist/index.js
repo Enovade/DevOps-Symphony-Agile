@@ -37817,10 +37817,11 @@ var resultData = ""
         
         let newStr = agileData.replace(/```/g, '');
         let iStr = newStr.replace('json', '');
-        let myjson=[]
-        myjson = iStr
-        console.log(myjson)
-        parseJsonArray(myjson);
+        let jsonString = JSON.stringify(iStr);
+        let jsonObject = JSON.parse(jsonString);
+        //myjson = JSON.parse(iStr);
+        console.log(jsonObject)
+        parseJsonArray(jsonObject);
         core.setOutput('jawapan', "Successfully create tasks");
     }
 })
