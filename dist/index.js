@@ -37834,8 +37834,8 @@ var resultData = ""
         console.log(Array.isArray(jsonObject)); //
         
         //myjson = JSON.parse(iStr);
-        //console.log(theJSON)
-        //parseJsonArray(theJSON);
+        console.log(jsonObject)
+        parseJsonArray(jsonObject);
         core.setOutput('jawapan', "Successfully create tasks");
     }
 })
