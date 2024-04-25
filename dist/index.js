@@ -37812,10 +37812,13 @@ var resultData = ""
  let getAnalyze = axios.post(agileURL, payload)
 .then(res => {
     if (res.status === 200) {
-        const agileData = res.data.text
+        let agileData = res.data.text
         console.log("----------------Agile Data--------------------")
+        
+        let newStr = agileData.replace(/```/g, '');
+        let iStr = newStr.replace('json', '');
         let myjson=[]
-        myjson = agileData
+        myjson = iStr
         console.log(myjson)
         parseJsonArray(myjson);
         core.setOutput('jawapan', "Successfully create tasks");
