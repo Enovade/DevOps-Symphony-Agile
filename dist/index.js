@@ -37814,8 +37814,9 @@ var resultData = ""
     if (res.status === 200) {
         const agileData = res.data.text
         console.log("----------------Agile Data--------------------")
-        console.log(agileData)
-        parseJsonArray(agileData);
+        const myjson = JSON.parse(agileData)
+        console.log(myjson)
+        parseJsonArray(myjson);
         core.setOutput('jawapan', "Successfully create tasks");
     }
 })
