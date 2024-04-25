@@ -37817,26 +37817,19 @@ var resultData = ""
         
         let newStr = agileData.replace(/```/g, '');
         let iStr = newStr.replace('json', '');
-        let theJSON = {};
-        theJSON = { "data": iStr }
-        console.log(theJSON.data)
+        let jsonString = JSON.parse(iStr);
+        let a = JSON.parse(`$iStr`)
 
-        console.log(typeof theJSON.data);  // Check the data type
-        console.log(Array.isArray(theJSON.data)); // Check if it's truly an array
+        console.log(jsonString)
+        console.log("------------------------------------")
+        console.log(a)
+ 
 
-        let jsonString = JSON.stringify(theJSON.data);
-        console.log("JSONString: " + jsonString);
-        console.log(typeof jsonString);  // Check the data type
-        console.log(Array.isArray(jsonString)); //
         
-        let jsonObject = JSON.parse(theJSON);
-        console.log("JSONObject: " + jsonObject);
-        console.log(typeof jsonObject);  // Check the data type
-        console.log(Array.isArray(jsonObject)); //
         
         //myjson = JSON.parse(iStr);
-        console.log(jsonObject)
-        parseJsonArray(jsonObject);
+        //console.log(jsonObject)
+        parseJsonArray(a);
         core.setOutput('jawapan', "Successfully create tasks");
     }
 })
