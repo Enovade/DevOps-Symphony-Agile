@@ -30,12 +30,12 @@ var resultData = ""
         let agileData = res.data.text
         console.log("----------------Agile Data--------------------")
         
-        let newStr = agileData.replace(/```/g, '');
-        let iStr = newStr.replace('json', '');
-        let jsonString = JSON.parse(iStr);
-        let a = JSON.parse(`$iStr`)
+        // let newStr = agileData.replace(/```/g, '');
+        // let iStr = newStr.replace('json', '');
+        // let jsonString = JSON.parse(iStr);
+        // let a = JSON.parse(`$iStr`)
 
-        console.log(jsonString)
+        console.log(agileData)
         console.log("------------------------------------")
         console.log(a)
  
@@ -44,8 +44,8 @@ var resultData = ""
         
         //myjson = JSON.parse(iStr);
         //console.log(jsonObject)
-        parseJsonArray(a);
-        core.setOutput('jawapan', "Successfully create tasks");
+        //parseJsonArray(a);
+        core.setOutput('jawapan', agileData);
     }
 })
 .catch(err => {
