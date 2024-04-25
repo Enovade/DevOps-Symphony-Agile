@@ -29,7 +29,8 @@ var resultData = ""
     if (res.status === 200) {
         const agileData = res.data.text
         console.log("----------------Agile Data--------------------")
-        const myjson = JSON.stringify(agileData)
+        let myjson=[]
+        myjson = agileData
         console.log(myjson)
         parseJsonArray(myjson);
         core.setOutput('jawapan', "Successfully create tasks");
