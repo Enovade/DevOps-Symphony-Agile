@@ -34,6 +34,7 @@ var resultData = ""
         let iStr = newStr.replace('json', '');
         let theJSON = {};
         theJSON = { "data": iStr }
+        console.log(theJSON.data)
 
         console.log(typeof theJSON.data);  // Check the data type
         console.log(Array.isArray(theJSON.data)); // Check if it's truly an array
@@ -43,7 +44,7 @@ var resultData = ""
         console.log(typeof jsonString);  // Check the data type
         console.log(Array.isArray(jsonString)); //
         
-        let jsonObject = JSON.parse(theJSON.data);
+        let jsonObject = JSON.parse(theJSON);
         console.log("JSONObject: " + jsonObject);
         console.log(typeof jsonObject);  // Check the data type
         console.log(Array.isArray(jsonObject)); //
