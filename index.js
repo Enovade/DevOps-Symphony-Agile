@@ -32,11 +32,17 @@ var resultData = ""
         
         let newStr = agileData.replace(/```/g, '');
         let iStr = newStr.replace('json', '');
+        let theJSON = {};
+        theJSON = { "data": iStr }
+
+        console.log(typeof theJSON.data);  // Check the data type
+        console.log(Array.isArray(jsonArray.data)); // Check if it's truly an array
+
         let jsonString = JSON.stringify(iStr);
         let jsonObject = JSON.parse(jsonString);
         //myjson = JSON.parse(iStr);
-        console.log(jsonObject)
-        parseJsonArray(jsonObject);
+        console.log(theJSON)
+        parseJsonArray(theJSON);
         core.setOutput('jawapan', "Successfully create tasks");
     }
 })
@@ -45,7 +51,7 @@ var resultData = ""
 })
 
 function parseJsonArray(jsonArray) {
-    jsonArray.forEach(item => {
+    jsonArray.data.forEach(item => {
         console.log('Title:', item.Title);
         console.log('Body:', item.Body);
         console.log('Labels:', item.Labels);
