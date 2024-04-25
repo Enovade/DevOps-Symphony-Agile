@@ -37815,7 +37815,7 @@ var resultData = ""
         const agileData = res.data.text
         console.log("----------------Agile Data--------------------")
         console.log(agileData)
-        createIssue();
+        parseJsonArray(agileData);
         core.setOutput('jawapan', "Successfully create tasks");
     }
 })
@@ -37823,15 +37823,31 @@ var resultData = ""
     console.error(err); 
 })
 
+function parseJsonArray(jsonArray) {
+    jsonArray.forEach(item => {
+        console.log('Title:', item.Title);
+        console.log('Body:', item.Body);
+        console.log('Labels:', item.Labels);
+        console.log('Milestone:', item.Milestone);
+        console.log('Assignees:', item.Assignees);
+        console.log('-------------------------');
+        createIssue(item.Title, item.Body, item.Labels, item.Milestone, item.Assignees);
+    });
+}
 
-async function createIssue() {
+// Usage:
+
+parseJsonArray(myjson);
+
+
+async function createIssue( title, body, labels, milestone, assignees) {
     const { data } = await octokit.request("POST /repos/Enovade/test-agile/issues", {
       owner: "Enovade",
       repo: "test-agile",
-      title: "Issue Title",
-      body: "Description of the issue.",
-      labels: ["bug"],
-      assignees: ["hanafiah-enovade"],
+      title: title,
+      body: body,
+      labels: labels,
+      assignees: [assignees],
     });
     console.log(data);
   }
