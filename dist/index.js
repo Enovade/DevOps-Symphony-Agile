@@ -37835,11 +37835,6 @@ function parseJsonArray(jsonArray) {
     });
 }
 
-// Usage:
-
-parseJsonArray(myjson);
-
-
 async function createIssue( title, body, labels, milestone, assignees) {
     const { data } = await octokit.request("POST /repos/Enovade/test-agile/issues", {
       owner: "Enovade",
