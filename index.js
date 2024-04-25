@@ -71,9 +71,10 @@ function parseJsonArray(jsonArray) {
 }
 
 async function createIssue( title, body, labels, milestone, assignees) {
-    const { data } = await octokit.request("POST /repos/Enovade/test-agile/issues", {
-      owner: "Enovade",
-      repo: "test-agile",
+    const myrepo = "POST /repos/" + owner + "/" + repo + "/issues";
+    const { data } = await octokit.request(myrepo, {
+      owner: owner,
+      repo: repo,
       title: title,
       body: body,
       labels: labels,
