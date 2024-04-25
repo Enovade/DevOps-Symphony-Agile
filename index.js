@@ -40,8 +40,8 @@ var resultData = ""
 
         let jsonString = JSON.stringify(theJSON.data);
         console.log("JSONString: " + jsonString);
-        console.log(typeof jsonObject);  // Check the data type
-        console.log(Array.isArray(jsonObject)); //
+        console.log(typeof jsonString);  // Check the data type
+        console.log(Array.isArray(jsonString)); //
         
         let jsonObject = JSON.parse(theJSON.data);
         console.log("JSONObject: " + jsonObject);
