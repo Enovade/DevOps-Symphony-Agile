@@ -37821,13 +37821,21 @@ var resultData = ""
         theJSON = { "data": iStr }
 
         console.log(typeof theJSON.data);  // Check the data type
-        console.log(Array.isArray(jsonArray.data)); // Check if it's truly an array
+        console.log(Array.isArray(theJSON.data)); // Check if it's truly an array
 
-        let jsonString = JSON.stringify(iStr);
-        let jsonObject = JSON.parse(jsonString);
+        let jsonString = JSON.stringify(theJSON.data);
+        console.log("JSONString: " + jsonString);
+        console.log(typeof jsonObject);  // Check the data type
+        console.log(Array.isArray(jsonObject)); //
+        
+        let jsonObject = JSON.parse(theJSON.data);
+        console.log("JSONObject: " + jsonObject);
+        console.log(typeof jsonObject);  // Check the data type
+        console.log(Array.isArray(jsonObject)); //
+        
         //myjson = JSON.parse(iStr);
-        console.log(theJSON)
-        parseJsonArray(theJSON);
+        //console.log(theJSON)
+        //parseJsonArray(theJSON);
         core.setOutput('jawapan', "Successfully create tasks");
     }
 })
