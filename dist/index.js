@@ -37814,15 +37814,17 @@ var resultData = ""
     if (res.status === 200) {
         let agileData = res.data.text
         console.log("----------------Agile Data--------------------")
+        console.log(agileData)
+        console.log("----------------Get Data--------------------")
         
-        // let newStr = agileData.replace(/```/g, '');
-        // let iStr = newStr.replace('json', '');
+        let newStr = agileData.replace(/```json/g, '');
+        let iStr = newStr.replace('json', '');
+        console.log(iStr)
         // let jsonString = JSON.parse(iStr);
         // let a = JSON.parse(`$iStr`)
 
-        console.log(agileData)
         console.log("------------------------------------")
-        console.log(a)
+        //console.log(a)
  
 
         
