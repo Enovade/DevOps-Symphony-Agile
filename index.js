@@ -32,11 +32,17 @@ var resultData = ""
         console.log(agileData)
         console.log("----------------Get Data--------------------")
         
-        let newStr = agileData.replace(/```/g, '');
-        let iStr = newStr.replace('json', '');
-        //console.log(iStr)
+        let newStr = agileData.replace(/```json/g, '');
+        newStr = newStr.replace(/```/g, '');
+        newStr = newStr.trimStart();
+        newStr = newStr.trimEnd();
+
+        // let newStr = agileData.replace(/```json/g, '');
+        // let iStr = newStr.replace('json', '');
+        // iStr = iStr.replace(/```/g, '');
+        // console.log(newStr)
         try {
-            let jsonString = JSON.parse(iStr);
+            let jsonString = JSON.parse(newStr);
             console.log(jsonString);
         } catch (error) {
             console.error("Parsing error:", error);
