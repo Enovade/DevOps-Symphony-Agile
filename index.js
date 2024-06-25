@@ -83,7 +83,7 @@ async function createIssue( title, body, labels, milestone, assignees) {
       title: title,
       body: body,
       labels: labels,
-      assignees: [assignees],
+      assignees: assignees,
     });
     console.log(data);
   }
