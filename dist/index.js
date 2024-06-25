@@ -37817,24 +37817,20 @@ var resultData = ""
         console.log(agileData)
         console.log("----------------Get Data--------------------")
         
+
+
         let newStr = agileData.replace(/```json/g, '');
         newStr = newStr.replace(/```/g, '');
         newStr = newStr.trimStart();
         newStr = newStr.trimEnd();
-
-        // let newStr = agileData.replace(/```json/g, '');
-        // let iStr = newStr.replace('json', '');
-        // iStr = iStr.replace(/```/g, '');
-        // console.log(newStr)
+        let jsonString = []
         try {
-            let jsonString = JSON.parse(newStr);
+            jsonString = JSON.parse(newStr)
             console.log(jsonString);
+            parseJsonArray(jsonString);
         } catch (error) {
             console.error("Parsing error:", error);
         }
-        //let jsonString = JSON.parse(iStr);
-        //console.log(jsonString)
-        // let a = JSON.parse(`$iStr`)
 
         console.log("------------------------------------")
         //console.log(a)
@@ -37853,7 +37849,7 @@ var resultData = ""
 })
 
 function parseJsonArray(jsonArray) {
-    jsonArray.data.forEach(item => {
+    jsonArray.forEach(item => {
         console.log('Title:', item.Title);
         console.log('Body:', item.Body);
         console.log('Labels:', item.Labels);
